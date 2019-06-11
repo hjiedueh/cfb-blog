@@ -1,0 +1,87 @@
+2019-06-05 00:43:56,918 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:48]
+2019-06-05 00:44:09,853 ERROR: Exception on /reset_password_request/ [POST] [in c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask_mail.py", line 492, in send
+    message.send(connection)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask_mail.py", line 427, in send
+    connection.send(self)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask_mail.py", line 192, in send
+    message.rcpt_options)
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 852, in sendmail
+    self.ehlo_or_helo_if_needed()
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 600, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 440, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 367, in putcmd
+    self.send(str)
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 359, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Harrison Jied\cfb-blog\app\routes.py", line 156, in reset_password_request
+    send_password_reset_email(user)
+  File "C:\Users\Harrison Jied\cfb-blog\app\email.py", line 20, in send_password_reset_email
+    user=user, token=token))
+  File "C:\Users\Harrison Jied\cfb-blog\app\email.py", line 10, in send_email
+    mail.send(msg)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask_mail.py", line 492, in send
+    message.send(connection)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask_mail.py", line 152, in __exit__
+    self.host.quit()
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 983, in quit
+    res = self.docmd("quit")
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 420, in docmd
+    self.putcmd(cmd, args)
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 367, in putcmd
+    self.send(str)
+  File "C:\Users\Harrison Jied\AppData\Local\Programs\Python\Python36-32\lib\smtplib.py", line 359, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2019-06-05 00:51:46,832 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:48]
+2019-06-05 00:54:13,001 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6NSwiZXhwIjoxNTU5NzEwOTgxLjIyOTk5OTV9.3w2nCMtJaaYWXFJJ2BhGdc_f7nqpMAgvXmRjh-SP0Cg [GET] [in c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-05 01:01:13,666 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6NSwiZXhwIjoxNTU5NzEwOTgxLjIyOTk5OTV9.3w2nCMtJaaYWXFJJ2BhGdc_f7nqpMAgvXmRjh-SP0Cg [GET] [in c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\harrison jied\cfb-blog\venv\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-05 01:01:42,052 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:48]
+2019-06-05 10:55:06,668 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
+2019-06-05 10:58:36,129 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
+2019-06-05 12:11:15,195 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
+2019-06-05 12:29:04,271 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
+2019-06-05 12:37:23,654 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
+2019-06-05 12:42:49,631 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
+2019-06-05 12:47:04,584 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
+2019-06-05 13:48:58,037 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:50]
