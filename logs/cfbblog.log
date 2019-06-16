@@ -91,3 +91,5 @@ TypeError: The view function did not return a valid response. The function eithe
 2019-06-15 22:52:05,472 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:52]
 2019-06-15 22:52:14,091 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:52]
 2019-06-15 22:52:50,445 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:52]
+2019-06-16 16:58:31,045 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:52]
+2019-06-16 16:58:48,288 INFO: Microblog startup [in C:\Users\Harrison Jied\cfb-blog\app\__init__.py:52]
