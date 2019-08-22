@@ -1,11 +1,18 @@
+
+<head>
+      {% if title %}
+      <title>{{ title }} - Microblog</title>
+      {% else %}
+      <title>Welcome to Microblog</title>
+      {% endif %}
+      <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
 {% extends 'bootstrap/base.html' %}
 
-{% block title %}
-    {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
-{% endblock %}
 
 {% block navbar %}
-    	<nav style="background-color:#003F72" class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <nav style="background-color:#000;" class="navbar">
   <a class="navbar-brand" href="/">
     CFB</a>
   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
@@ -15,13 +22,13 @@
                     <span class="icon-bar"></span>
                 </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin:5px">
-    <ul class="nav navbar-nav mr-auto" style="margin:10px">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin:10px 0 0 0;">
+    <ul class="nav navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('index') }}">{{ _('Home') }} </a>
+        <a class="nav-link" href="{{ url_for('main.index') }}">{{ _('Home') }} </a>
       </li>
       <li class="nav-item">
-	    <a class="nav-link" href="{{ url_for('explore') }}">{{ _('Explore') }}</a>
+	    <a class="nav-link" href="{{ url_for('main.explore') }}">{{ _('Explore') }}</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link" href="/rankings/">{{ _('Rankings') }}</a>
@@ -30,29 +37,29 @@
 	    <a class="nav-link" href="/standings/">{{ _('Standings') }}</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="/schedule/">{{ _('Schedule') }}</a>
+	    <a class="nav-link" href="/schedule/">{{ _('Cheech') }}</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link" href="/recruiting/">{{ _('Recruiting') }}</a>
 	  </li>
 	  {% if current_user.is_anonymous %}
 	  <li class="nav-item">
-	    <a class="nav-link" href="{{ url_for('login') }}">{{ _('Login') }}</a>
+	    <a class="nav-link" href="{{ url_for('auth.login') }}">{{ _('Login') }}</a>
 	  </li>
 	  <li class="nav-item">
-	  <a class="nav-link" href="{{ url_for('register') }}">{{ _('Sign up') }}</a>
+	  <a class="nav-link" href="{{ url_for('auth.register') }}">{{ _('Sign up') }}</a>
 	  </li>
 	  {% else %}
 	  <li class="nav-item">
-		<a class="nav-link" href="{{ url_for('user', username=current_user.username) }}">{{ _('%(username)s', username=current_user.username) }}</a>
+		<a class="nav-link" href="{{ url_for('main.user', username=current_user.username) }}">{{ _('%(username)s', username=current_user.username) }}</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="{{ url_for('logout') }}">{{ _('Logout') }}</a>
+	    <a class="nav-link" href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a>
 	  </li>
 	  {% endif %}
     </ul>
-    <form class="form-inline" style="height:50px; padding-top:10px">
-     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline" style="padding-top:10px; float: right;">
+     <input class="form-control mr-sm-2 mobile-search" type="search" placeholder="Search" aria-label="Search">
      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 	{% if session.logged_in %}
